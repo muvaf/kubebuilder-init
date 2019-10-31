@@ -55,7 +55,7 @@ func (in *ExampleKind) DeepCopyObject() runtime.Object {
 func (in *ExampleKindList) DeepCopyInto(out *ExampleKindList) {
 	*out = *in
 	out.TypeMeta = in.TypeMeta
-	out.ListMeta = in.ListMeta
+	in.ListMeta.DeepCopyInto(&out.ListMeta)
 	if in.Items != nil {
 		in, out := &in.Items, &out.Items
 		*out = make([]ExampleKind, len(*in))
@@ -144,7 +144,7 @@ func (in *OtherExampleKind) DeepCopyObject() runtime.Object {
 func (in *OtherExampleKindList) DeepCopyInto(out *OtherExampleKindList) {
 	*out = *in
 	out.TypeMeta = in.TypeMeta
-	out.ListMeta = in.ListMeta
+	in.ListMeta.DeepCopyInto(&out.ListMeta)
 	if in.Items != nil {
 		in, out := &in.Items, &out.Items
 		*out = make([]OtherExampleKind, len(*in))
