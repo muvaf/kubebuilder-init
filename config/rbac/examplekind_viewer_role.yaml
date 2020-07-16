@@ -1,0 +1,20 @@
+# permissions for end users to view examplekinds.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: examplekind-viewer-role
+rules:
+- apiGroups:
+  - mygroup.muvaf.github.io
+  resources:
+  - examplekinds
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - mygroup.muvaf.github.io
+  resources:
+  - examplekinds/status
+  verbs:
+  - get
