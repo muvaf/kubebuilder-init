@@ -1,10 +1,10 @@
-version: "2"
 domain: muvaf.github.io
 repo: github.com/muvaf/kubebuilder-init
 resources:
 - group: mygroup
-  version: v1alpha1
   kind: ExampleKind
-- group: mygroup
   version: v1alpha1
+- group: mygroup
   kind: OtherExampleKind
+  version: v1alpha1
+version: "2"

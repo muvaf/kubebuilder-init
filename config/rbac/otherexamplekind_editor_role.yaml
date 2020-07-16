@@ -1,0 +1,24 @@
+# permissions for end users to edit otherexamplekinds.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: otherexamplekind-editor-role
+rules:
+- apiGroups:
+  - mygroup.muvaf.github.io
+  resources:
+  - otherexamplekinds
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - mygroup.muvaf.github.io
+  resources:
+  - otherexamplekinds/status
+  verbs:
+  - get
