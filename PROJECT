@@ -7,4 +7,10 @@ resources:
 - group: mygroup
   kind: OtherExampleKind
   version: v1alpha1
+- group: mygroup
+  kind: ExampleKind
+  version: v1beta1
+- group: mygroup
+  kind: ExampleKind
+  version: v1beta2
 version: "2"
