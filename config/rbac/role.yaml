@@ -1,0 +1,48 @@
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - mygroup.muvaf.github.io
+  resources:
+  - examplekinds
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - mygroup.muvaf.github.io
+  resources:
+  - examplekinds/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - mygroup.muvaf.github.io
+  resources:
+  - otherexamplekinds
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - mygroup.muvaf.github.io
+  resources:
+  - otherexamplekinds/status
+  verbs:
+  - get
+  - patch
+  - update

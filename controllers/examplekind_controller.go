@@ -18,13 +18,12 @@ package controllers
 
 import (
 	"context"
+	"github.com/muvaf/kubebuilder-init/api/v1beta2"
 
 	"github.com/go-logr/logr"
 	"k8s.io/apimachinery/pkg/runtime"
 	ctrl "sigs.k8s.io/controller-runtime"
 	"sigs.k8s.io/controller-runtime/pkg/client"
-
-	mygroupv1alpha1 "github.com/muvaf/kubebuilder-init/api/v1alpha1"
 )
 
 // ExampleKindReconciler reconciles a ExampleKind object
@@ -48,6 +47,6 @@ func (r *ExampleKindReconciler) Reconcile(req ctrl.Request) (ctrl.Result, error)
 
 func (r *ExampleKindReconciler) SetupWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewControllerManagedBy(mgr).
-		For(&mygroupv1alpha1.ExampleKind{}).
+		For(&v1beta2.ExampleKind{}).
 		Complete(r)
 }

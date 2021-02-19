@@ -18,6 +18,7 @@ package main
 
 import (
 	"flag"
+
 	"os"
 
 	"k8s.io/apimachinery/pkg/runtime"
@@ -27,6 +28,7 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
 	mygroupv1alpha1 "github.com/muvaf/kubebuilder-init/api/v1alpha1"
+	mygroupv1beta1 "github.com/muvaf/kubebuilder-init/api/v1beta1"
 	mygroupv1beta2 "github.com/muvaf/kubebuilder-init/api/v1beta2"
 	"github.com/muvaf/kubebuilder-init/controllers"
 	// +kubebuilder:scaffold:imports
@@ -41,6 +43,7 @@ func init() {
 	_ = clientgoscheme.AddToScheme(scheme)
 
 	_ = mygroupv1alpha1.AddToScheme(scheme)
+	_ = mygroupv1beta1.AddToScheme(scheme)
 	_ = mygroupv1beta2.AddToScheme(scheme)
 	// +kubebuilder:scaffold:scheme
 }
@@ -82,6 +85,10 @@ func main() {
 		Scheme: mgr.GetScheme(),
 	}).SetupWithManager(mgr); err != nil {
 		setupLog.Error(err, "unable to create controller", "controller", "OtherExampleKind")
+		os.Exit(1)
+	}
+	if err = (&mygroupv1beta2.ExampleKind{}).SetupWebhookWithManager(mgr); err != nil {
+		setupLog.Error(err, "unable to create webhook", "webhook", "ExampleKind")
 		os.Exit(1)
 	}
 	// +kubebuilder:scaffold:builder

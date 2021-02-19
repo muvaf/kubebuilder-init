@@ -4,4 +4,4 @@ metadata:
   name: examplekind-sample
 spec:
   # Add fields here
-  foo: bar
+  fooBeta1: barr
