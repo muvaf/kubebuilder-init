@@ -1,5 +1,5 @@
 /*
-Copyright 2020 Muvaffak Onus.
+Copyright 2021 Muvaffak Onus.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -27,7 +27,6 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
 	mygroupv1alpha1 "github.com/muvaf/kubebuilder-init/api/v1alpha1"
-	mygroupv1beta2 "github.com/muvaf/kubebuilder-init/api/v1beta2"
 	"github.com/muvaf/kubebuilder-init/controllers"
 	// +kubebuilder:scaffold:imports
 )
@@ -41,7 +40,6 @@ func init() {
 	_ = clientgoscheme.AddToScheme(scheme)
 
 	_ = mygroupv1alpha1.AddToScheme(scheme)
-	_ = mygroupv1beta2.AddToScheme(scheme)
 	// +kubebuilder:scaffold:scheme
 }
 

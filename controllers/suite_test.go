@@ -1,5 +1,5 @@
 /*
-Copyright 2020 Muvaffak Onus.
+Copyright 2021 Muvaffak Onus.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -31,7 +31,6 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
 	mygroupv1alpha1 "github.com/muvaf/kubebuilder-init/api/v1alpha1"
-	mygroupv1beta1 "github.com/muvaf/kubebuilder-init/api/v1beta1"
 	// +kubebuilder:scaffold:imports
 )
 
@@ -67,9 +66,6 @@ var _ = BeforeSuite(func(done Done) {
 	Expect(err).NotTo(HaveOccurred())
 
 	err = mygroupv1alpha1.AddToScheme(scheme.Scheme)
-	Expect(err).NotTo(HaveOccurred())
-
-	err = mygroupv1beta1.AddToScheme(scheme.Scheme)
 	Expect(err).NotTo(HaveOccurred())
 
 	// +kubebuilder:scaffold:scheme
