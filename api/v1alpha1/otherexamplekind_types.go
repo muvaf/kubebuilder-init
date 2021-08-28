@@ -1,5 +1,5 @@
 /*
-Copyright 2020 Muvaffak Onus.
+Copyright 2021 Muvaffak Onus.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -28,7 +28,7 @@ type OtherExampleKindSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of OtherExampleKind. Edit OtherExampleKind_types.go to remove/update
+	// Foo is an example field of OtherExampleKind. Edit otherexamplekind_types.go to remove/update
 	Foo string `json:"foo,omitempty"`
 }
 
@@ -38,7 +38,8 @@ type OtherExampleKindStatus struct {
 	// Important: Run "make" to regenerate code after modifying this file
 }
 
-// +kubebuilder:object:root=true
+//+kubebuilder:object:root=true
+//+kubebuilder:subresource:status
 
 // OtherExampleKind is the Schema for the otherexamplekinds API
 type OtherExampleKind struct {
@@ -49,7 +50,7 @@ type OtherExampleKind struct {
 	Status OtherExampleKindStatus `json:"status,omitempty"`
 }
 
-// +kubebuilder:object:root=true
+//+kubebuilder:object:root=true
 
 // OtherExampleKindList contains a list of OtherExampleKind
 type OtherExampleKindList struct {

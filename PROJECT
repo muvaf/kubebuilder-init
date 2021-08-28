@@ -1,16 +1,25 @@
 domain: muvaf.github.io
+layout:
+- go.kubebuilder.io/v3
+projectName: kubebuilder-init
 repo: github.com/muvaf/kubebuilder-init
 resources:
-- group: mygroup
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: muvaf.github.io
+  group: mygroup
   kind: ExampleKind
+  path: github.com/muvaf/kubebuilder-init/api/v1alpha1
   version: v1alpha1
-- group: mygroup
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: muvaf.github.io
+  group: mygroup
   kind: OtherExampleKind
+  path: github.com/muvaf/kubebuilder-init/api/v1alpha1
   version: v1alpha1
-- group: mygroup
-  kind: ExampleKind
-  version: v1beta1
-- group: mygroup
-  kind: ExampleKind
-  version: v1beta2
-version: "2"
+version: "3"
