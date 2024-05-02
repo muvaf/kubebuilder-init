@@ -1,5 +1,5 @@
 /*
-Copyright 2021 Muvaffak Onus.
+Copyright 2024 Muvaffak Onus.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -15,8 +15,8 @@ limitations under the License.
 */
 
 // Package v1alpha1 contains API Schema definitions for the mygroup v1alpha1 API group
-//+kubebuilder:object:generate=true
-//+groupName=mygroup.muvaf.github.io
+// +kubebuilder:object:generate=true
+// +groupName=mygroup.muvaf.github.io
 package v1alpha1
 
 import (
